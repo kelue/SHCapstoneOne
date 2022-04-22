@@ -1,5 +1,5 @@
 # SHCapstoneOne
-Group 1 Capstone project for SideHustle internship
+Group 24 Capstone project for SideHustle internship
 
 Clone the project to your local to begin working on it
 
