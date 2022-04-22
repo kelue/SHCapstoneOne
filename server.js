@@ -22,9 +22,17 @@ const server = http.createServer((req, res) => {
         // json data
         const hostName = os.hostname();
         const platform = os.platform();
+        const architecture = os.arch();
+        const numberOfCPUS = os.cpus();
+        const networkInterfaces = os.networkInterfaces();
+        const uptime = os.uptime();
         const jsonData = `{
         "hostname": "${hostName}",
-        "platform": "${platform}"
+        "platform": "${platform}",
+        "architecture": "${architecture}",
+        "numberOfCPUS": "${numberOfCPUS.length}",
+        "networkInterfaces": "${networkInterfaces}",
+        "uptime" : "${uptime}"
     }`;
 
         // parse json
@@ -35,7 +43,7 @@ const server = http.createServer((req, res) => {
         var jsonContent = JSON.stringify(jsonObj);
         console.log(jsonContent);
 
-        fs.writeFile("output.json", jsonContent, 'utf8', function(err) {
+        fs.writeFile("osinfo.json", jsonContent, 'utf8', function(err) {
             if (err) {
                 console.log("An error occured while writing JSON Object to File.");
                 return console.log(err);
