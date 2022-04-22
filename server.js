@@ -13,7 +13,30 @@ const server = http.createServer((req, res) => {
     } else if (urlPath === '/about') {
 
     } else if (urlPath === '/sys') {
+        res.setHeader('Content-type', 'text/plain');
+        // file system module to perform file operations
+        const fs = require('fs');
 
+        // json data
+        const jsonData = '{"name":"John","city":"New York"}';
+
+        // parse json
+        const jsonObj = JSON.parse(jsonData);
+        console.log(jsonObj);
+
+        // stringify JSON Object
+        var jsonContent = JSON.stringify(jsonObj);
+        console.log(jsonContent);
+
+        fs.writeFile("output.json", jsonContent, 'utf8', function(err) {
+            if (err) {
+                console.log("An error occured while writing JSON Object to File.");
+                return console.log(err);
+            }
+
+            console.log("JSON file has been saved.");
+            res.end('Your OS info has been saved successfully!');
+        });
     } else {
         res.statusCode = 400;
     }
