@@ -1,5 +1,6 @@
 const http = require('http');
 
+
 const host = '127.0.0.1';
 const port = 3000;
 
@@ -16,9 +17,15 @@ const server = http.createServer((req, res) => {
         res.setHeader('Content-type', 'text/plain');
         // file system module to perform file operations
         const fs = require('fs');
+        const os = require('os');
 
         // json data
-        const jsonData = '{"name":"John","city":"New York"}';
+        const hostName = os.hostname();
+        const platform = os.platform();
+        const jsonData = `{
+        "hostname": "${hostName}",
+        "platform": "${platform}"
+    }`;
 
         // parse json
         const jsonObj = JSON.parse(jsonData);
@@ -43,5 +50,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, host, () => {
-    console.log(`Server running at ${host}:${port}`);
+    console.log(`Server running at ${ host }: ${ port }`);
 });
