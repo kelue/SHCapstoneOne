@@ -1,25 +1,24 @@
 const http = require('http');
-const express = require('express');
-const app = express();
-app.set('view engine', 'ejs');
 
 const host = '127.0.0.1';
 const port = 3000;
 
+const server = http.createServer((req, res) => {
+    const urlPath = req.url;
 
-app.get('/', function(req, res) {
-    res.render('index');
-})
+    if (urlPath === '/') {
+        res.statusCode = 200;
+        res.setHeader('Content-type', 'text/html');
+        res.end('pages/index.html');
+    } else if (urlPath === '/about') {
 
-app.get('/about', function(req, res) {
-    res.render('about');
-})
+    } else if (urlPath === '/sys') {
 
-app.get('*', function(req, res) {
-    res.render('404');
-})
+    } else {
+        res.statusCode = 400;
+    }
+});
 
-app.listen(port, function(err) {
-    if (err) console.log(err);
-    console.log("Server listening on PORT", port);
+server.listen(port, host, () => {
+    console.log(`Server running at ${host}:${port}`);
 });
