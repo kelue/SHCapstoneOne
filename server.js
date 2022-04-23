@@ -47,7 +47,7 @@ const server = http.createServer((req, res) => {
         console.log(jsonObj);
 
         // stringify JSON Object
-        var jsonContent = JSON.stringify(jsonObj);
+        var jsonContent = JSON.stringify(jsonObj, null, 2);
         console.log(jsonContent);
 
         fs.writeFile("osinfo.json", jsonContent, 'utf8', function(err) {
@@ -60,7 +60,7 @@ const server = http.createServer((req, res) => {
             res.end('Your OS info has been saved successfully!');
         });
     } else {
-        res.statusCode = 400;
+        res.statusCode = 404;
         res.setHeader('Content-type', 'text/html');
         html = fs.readFileSync('./pages/404.html');
         res.end(html);
