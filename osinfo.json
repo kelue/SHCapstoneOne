@@ -3,6 +3,6 @@
   "platform": "win32",
   "architecture": "x64",
   "numberOfCPUS": "4",
-  "networkInterfaces": "[object Object]",
-  "uptime": "1253010"
+  "networkInterfaces": "undefined",
+  "uptime": "1304036"
 }

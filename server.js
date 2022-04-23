@@ -33,12 +33,13 @@ const server = http.createServer((req, res) => {
         const numberOfCPUS = os.cpus();
         const networkInterfaces = os.networkInterfaces();
         const uptime = os.uptime();
+
         const jsonData = `{
         "hostname": "${hostName}",
         "platform": "${platform}",
         "architecture": "${architecture}",
         "numberOfCPUS": "${numberOfCPUS.length}",
-        "networkInterfaces": "${networkInterfaces}",
+        "networkInterfaces": "${networkInterfaces.length}",
         "uptime" : "${uptime}"
         }`;
 
