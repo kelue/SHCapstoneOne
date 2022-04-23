@@ -29,9 +29,7 @@
     },
     "homepage": "https://github.com/kelue/SHCapstoneOne#readme",
     "dependencies": {
-        "fs": "^0.0.1-security",
-        "http": "^0.0.1-security",
-        "os": "^0.1.2"
+
     },
     "devDependencies": {
         "nodemon": "^2.0.15"
