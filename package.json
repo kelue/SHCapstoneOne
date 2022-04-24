@@ -1,4 +1,3 @@
-{
     "name": "shcapstoneone",
     "version": "1.0.0",
     "description": "Side Hustle Capstone One for Nodejs Group 24",
@@ -28,9 +27,6 @@
         "url": "https://github.com/kelue/SHCapstoneOne/issues"
     },
     "homepage": "https://github.com/kelue/SHCapstoneOne#readme",
-    "dependencies": {
-
-    },
     "devDependencies": {
         "nodemon": "^2.0.15"
     }

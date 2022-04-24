@@ -33,13 +33,13 @@ const server = http.createServer((req, res) => {
         const numberOfCPUS = os.cpus();
         const networkInterfaces = os.networkInterfaces();
         const uptime = os.uptime();
-
+      
         const jsonData = `{
         "hostname": "${hostName}",
         "platform": "${platform}",
         "architecture": "${architecture}",
         "numberOfCPUS": "${numberOfCPUS.length}",
-        "networkInterfaces": "${networkInterfaces.length}",
+        "networkInterfaces": "${networkInterfaces}",
         "uptime" : "${uptime}"
         }`;
 
@@ -48,7 +48,7 @@ const server = http.createServer((req, res) => {
         console.log(jsonObj);
 
         // stringify JSON Object
-        var jsonContent = JSON.stringify(jsonObj, null, 2);
+        var jsonContent = JSON.stringify(jsonObj);
         console.log(jsonContent);
 
         fs.writeFile("osinfo.json", jsonContent, 'utf8', function(err) {
@@ -60,6 +60,8 @@ const server = http.createServer((req, res) => {
             console.log("JSON file has been saved.");
             res.end('Your OS info has been saved successfully!');
         });
+
+      
     } else {
         res.statusCode = 404;
         res.setHeader('Content-type', 'text/html');
