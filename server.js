@@ -17,14 +17,12 @@ const server = http.createServer((req, res) => {
         res.setHeader('Content-type', 'text/html');
         html = fs.readFileSync('./pages/index.html');
         res.end(html);
-    } 
-    else if (urlPath === '/about') {
+    } else if (urlPath === '/about') {
         res.statusCode = 200;
         res.setHeader('Content-type', 'text/html');
         html = fs.readFileSync('./pages/about.html');
         res.end(html);
-    } 
-    else if (urlPath === '/sys') {
+    } else if (urlPath === '/sys') {
         res.statusCode = 201;
         res.setHeader('Content-type', 'text/plain');
 
@@ -35,6 +33,7 @@ const server = http.createServer((req, res) => {
         const numberOfCPUS = os.cpus();
         const networkInterfaces = os.networkInterfaces();
         const uptime = os.uptime();
+      
         const jsonData = `{
         "hostname": "${hostName}",
         "platform": "${platform}",
@@ -61,9 +60,10 @@ const server = http.createServer((req, res) => {
             console.log("JSON file has been saved.");
             res.end('Your OS info has been saved successfully!');
         });
-    } 
-    else {
-        res.statusCode = 400;
+
+      
+    } else {
+        res.statusCode = 404;
         res.setHeader('Content-type', 'text/html');
         html = fs.readFileSync('./pages/404.html');
         res.end(html);

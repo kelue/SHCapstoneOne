@@ -1,34 +1,33 @@
-{
-  "name": "shcapstoneone",
-  "version": "1.0.0",
-  "description": "Side Hustle Capstone One for Nodejs Group 24",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "dev": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/kelue/SHCapstoneOne.git"
-  },
-  "keywords": [
-    "side",
-    "hustle",
-    "capstone",
-    "internship",
-    "intern",
-    "group",
-    "24",
-    "april"
-  ],
-  "author": "Side Hustle 5.0 Nodejs Group 24 Interns",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kelue/SHCapstoneOne/issues"
-  },
-  "homepage": "https://github.com/kelue/SHCapstoneOne#readme",
-  "dependencies": {
-    "nodemon": "^2.0.15"
-  }
+    "name": "shcapstoneone",
+    "version": "1.0.0",
+    "description": "Side Hustle Capstone One for Nodejs Group 24",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js",
+        "dev": "nodemon server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/kelue/SHCapstoneOne.git"
+    },
+    "keywords": [
+        "side",
+        "hustle",
+        "capstone",
+        "internship",
+        "intern",
+        "group",
+        "24",
+        "april"
+    ],
+    "author": "Side Hustle 5.0 Nodejs Group 24 Interns",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/kelue/SHCapstoneOne/issues"
+    },
+    "homepage": "https://github.com/kelue/SHCapstoneOne#readme",
+    "devDependencies": {
+        "nodemon": "^2.0.15"
+    }
 }
